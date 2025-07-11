@@ -1,0 +1,8 @@
+Package: ids-gorad
+Version: 1.0
+Section: web
+Priority: optional
+Architecture: all
+Depends: python3, python3-pip, python3-venv, systemd
+Maintainer: Cybergorad <rakotoarivonyalifera27@gmail.com>
+Description: IDS-GORAD package application for multi-usage

@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+
+echo "[+] IDS-GORAD is installing, drink coffee"
+
+
+cd /opt/IDS-GORAD
+
+# Création venv
+python3 -m venv venv
+source venv/bin/activate
+
+# Installation requirements
+#pip install --upgrade pip
+pip install -r requirements.txt
+
+# Migration + collectstatic si nécessaire
+python3 manage.py migrate
+
+
+# Chown
+#chown -R www-data:www-data /opt/myapp
+
+# Service
+systemctl daemon-reexec
+systemctl daemon-reload
+systemctl enable ids-gorad
+systemctl start ids-gorad
+
+echo "[+] IDS-gorad installed successfully"
