@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "[+] IDS-GORAD is installing, drink coffee"
+echo "[+] GORAD system is installing, drink coffee, cybergorad is here..."
 
 
 cd /opt/IDS-GORAD
@@ -26,5 +26,7 @@ systemctl daemon-reexec
 systemctl daemon-reload
 systemctl enable ids-gorad
 systemctl start ids-gorad
+systemctl start multi-gorad
 
 echo "[+] IDS-gorad installed successfully"
+echo "READ DOCS IN https://ids-gorad.onrender.com to get help"

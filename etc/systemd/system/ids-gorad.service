@@ -8,6 +8,8 @@ Group=root
 Environment=DISPLAY=:0
 WorkingDirectory=/opt/IDS-GORAD
 ExecStart=/bin/bash /opt/IDS-GORAD/start.sh
+ExecStopPost=/usr/bin/pkill -9 -f daphne
+ExecStop=/usr/bin/pkill -9 -f daphne
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
